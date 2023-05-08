@@ -1,0 +1,15 @@
+{
+  "VERSION": "15-SP4",
+  "DISTRI": "suma_installation",
+  "FLAVOR": "Server-DVD-Updates",
+  "ARCH": "x86_64",
+  "SLE_PRODUCT": "suma",
+  "TEST": "online-installation",
+  "SCC_REGCODE": "REPLACE-WITH-REAL-CODE",
+  "DESKTOP": "textmode",
+  "NOVIDEO": "0",
+  "QEMUVGA": "cirrus",
+  "PATTERNS": "",
+  "PUBLISH_HDD_1": "",
+  "ISO_URL": "http://download.suse.de/ibs/SUSE:/SLE-15-SP4:/Update:/QR:/TEST/images/iso/SLE-15-SP4-Online-x86_64-Media1.iso"
+}
