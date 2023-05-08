@@ -1,9 +1,16 @@
 #!/bin/bash
-  
+
 HOST=http://sleposbuilder.suse.cz
 BUILD_ID=$1
 BUILD_VER=$2
-PARAMS=params-run-installation-$BUILD_VER.json
+INSTALLATION_TYPE=$3
+PARAMS=params-run-installation-$BUILD_VER-$INSTALLATION_TYPE.json
+
+if [ ! -f "$PARAMS" ]; then
+  echo "SUMA installation **FAILED**"
+  echo "Parameters file not found: $PARAMS"
+  exit 1
+fi
 
 STARTED_JOBS=`openqa-client --host $HOST --json-output --params $PARAMS isos post BUILD="-suma-installation-$BUILD_VER-$BUILD_ID" | jq .ids`
 ID_JOB_1=`echo $STARTED_JOBS | jq '.[0]'`
